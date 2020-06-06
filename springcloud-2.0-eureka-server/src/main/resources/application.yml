@@ -1,0 +1,26 @@
+###服务端口号
+server:
+  port: ${port}
+###eureka 基本信息配置
+###eureka集群的时候要配置应用名称名称要一样
+spring:
+  application:
+    name: app-kk-eureka
+eureka:
+  instance:
+    ###注册到eurekaip地址
+    hostname: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: ${eureka.server}
+    ###因为自己是为注册中心，不需要自己注册自己false 集群的时候要注册自己true
+    register-with-eureka: true
+    ###因为自己是为注册中心，不需要检索服务false 集群的时候需要检索服务true
+    fetch-registry: true
+   ###eureka服务端添加该配置关闭自我保护机制
+  server:
+    # 测试时关闭自我保护机制，保证不可用服务及时踢出
+    enable-self-preservation: false
+    ##剔除失效服务间隔2秒
+    eviction-interval-timer-in-ms: 2000
+
