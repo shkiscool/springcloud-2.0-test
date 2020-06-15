@@ -1,0 +1,20 @@
+spring:
+  application:
+    ####注册中心应用名称
+    name:  test-configClitent
+  cloud:
+    config:
+      ####读取后缀
+      profile: sit
+      ####读取config-server注册地址
+      discovery:
+        service-id: config-server
+        ###开启读取权限
+        enabled: true
+#####    eureka服务注册地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+server:
+  port: 8882

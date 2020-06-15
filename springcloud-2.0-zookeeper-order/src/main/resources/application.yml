@@ -4,7 +4,7 @@ server:
 ###服务别名----服务注册到注册中心名称
 spring:
   application:
-    name: zk-member
+    name: zk-order
   cloud:
     zookeeper:
       ###注册zookeeper地址

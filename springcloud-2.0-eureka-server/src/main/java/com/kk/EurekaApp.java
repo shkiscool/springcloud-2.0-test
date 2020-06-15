@@ -17,6 +17,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  *   生产环境：建议开启自我保护机制
  *   如何关闭自我保护机制：在eurekaServer 和 eurekaClient 端的application.yml中 添加配置相关的配置
  *
+ *
+ * 换不通注册中心的时候，接口的调用方式不变，无非变换一些配置文件和maven依赖信息。
  */
 @SpringBootApplication
 @EnableEurekaServer
