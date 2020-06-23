@@ -6,7 +6,9 @@ import com.netflix.zuul.exception.ZuulException;
 import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.stereotype.Component;
 
+//@Component
 public class TokenFilter extends ZuulFilter {
     // 过滤类型pre 表示在请求之前进行执行
     @Override

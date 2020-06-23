@@ -26,5 +26,6 @@ public class AppConfigServer {
 
     public static void main(String[] args) {
         SpringApplication.run(AppConfigServer.class, args);
+
     }
 }

@@ -1,6 +1,6 @@
 spring:
   application:
-    ####注册中心应用名称
+    ####注册中心应用名称 必须跟git上的配置文件开头名称一样
     name:  test-configClitent
   cloud:
     config:
@@ -18,3 +18,10 @@ eureka:
       defaultZone: http://localhost:8000/eureka
 server:
   port: 8882
+
+###开启所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
