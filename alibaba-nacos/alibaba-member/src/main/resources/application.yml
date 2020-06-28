@@ -4,8 +4,13 @@ spring:
       discovery:
         ###服务注册地址
         server-addr: 127.0.0.1:8848
+        ###配置中心
+      config:
+        server-addr: 127.0.0.1:8848
+        group: DEFAULT_GROUP
+        file-extension: properties
   application:
     name: kk-member
 server:
-  port: 8081
+  port: ${port}
 

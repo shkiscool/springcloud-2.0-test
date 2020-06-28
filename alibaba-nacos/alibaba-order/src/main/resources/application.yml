@@ -7,5 +7,5 @@ spring:
   application:
     name: kk-order
 server:
-  port: 8082
+  port: ${port}
 

@@ -1,0 +1,3 @@
+com\kk\service\order\api\openfeign\MemberServiceFeign.class
+com\kk\service\order\api\AppOrder.class
+com\kk\service\order\api\impl\OrderServiceImpl.class
