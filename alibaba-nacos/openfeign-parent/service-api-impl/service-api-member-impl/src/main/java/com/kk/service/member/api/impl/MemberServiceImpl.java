@@ -16,6 +16,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Value("${kk.is}")
     private String descri;
+
     @Override
     public String getUser(@RequestParam("userId")Integer userId) {
         return "我是会员服务" + port;
