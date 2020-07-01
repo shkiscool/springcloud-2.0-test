@@ -1,16 +1,21 @@
 package com.kk.filter;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 @Component
 public class TokenGlobalFilter implements GlobalFilter {
+
+    @Value("${server.port}")
+    private String serverPort;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -24,6 +29,8 @@ public class TokenGlobalFilter implements GlobalFilter {
             DataBuffer buffer = response.bufferFactory().wrap(msg.getBytes());
             return response.writeWith(Mono.just(buffer));
         }
+        // 在请求头中存放serverPort serverPort
+        ServerHttpRequest request = exchange.getRequest().mutate().header("serverPort", serverPort).build();
         // 直接转发到我们真实服务
         return  chain.filter(exchange);
     }
