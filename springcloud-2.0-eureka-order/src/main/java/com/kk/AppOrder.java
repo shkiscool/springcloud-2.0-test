@@ -14,6 +14,7 @@ public class AppOrder {
         SpringApplication.run(AppOrder.class, args);
     }
 
+    //
     @Bean
     @LoadBalanced //@LoadBalanced就能让这个RestTemplate在请求时拥有客户端负载均衡的能力
     RestTemplate restTemplate() {
